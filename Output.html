@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Output</title>
+</head>
+
+<body>
+
+    <h1>Window 객체의 alert() 메소드</h1>
+    <button onclick="alertDialogBox()">alert 대화 상자</button>
+
+    <script>
+        function alertDialogBox() {//사용자에게 단순메세지 표시
+            alert("확인을 누를 때까지 다른 작업을 할 수 없어요!");
+        }
+    </script>
+
+    <h1>confirm() 메소드</h1>
+    <button onclick="confirmDialogBox()">confirm 대화 상자</button>
+    <p id="text"></p>
+
+    <script>
+        function confirmDialogBox() {//사용자에게 확인/취소 선택지 제공
+            var str;
+
+            if (confirm("확인이나 취소를 누르세요!") == true) {
+                str = "확인!";
+            } else {
+                str = "취소ㅜ"
+            }
+            document.getElementById("text").innerHTML = str;
+        }
+    </script>
+    <!-- <title>JavaScript BOM Dialog Box</title> -->
+    <h1>prompt() 메소드</h1>
+    <button onclick="promptDialogBox()">prompt 대화 상자</button>
+    <p id="text"></p>
+
+    <script>
+        function promptDialogBox() {//사용자에게 입력 값을 받음
+            var inputStr = prompt("당신의 이름을 입력해주세요");
+
+            if (inputStr != null) {
+                document.getElementById("text").innerHTML = "당신의 이름은 " + inputStr + "입니다."
+            }
+        }
+    </script>
+</body>
+
+</html>

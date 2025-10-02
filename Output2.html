@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Output</title>
+</head>
+
+<body>
+
+    <h1>HTML DOM 요소를 이용한 innerHTML 프로퍼티</h1>
+    <p id="text">이 문장 바꿀거임</p>
+
+    <script>
+        var str = document.getElementById("text");
+        str.innerHTML = "문장 바뀜"
+    </script>
+
+    <h1>HTML 태그 이름을 이용한 선택</h1>
+    <ul>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+        <li>세 번째</li>
+        <li>네 번째</li>
+        <li>다섯번째</li>
+    </ul>
+
+    <script>
+        var selectitem = document.getElementsByTagName("li"); //모든 <li> 요소 선택
+        for (var i = 0; i <selectitem.length; i++) {
+            selectitem.item(i).style.color = "pink"; // 선택한 요소 색상 변경
+        }
+    </script>
+    
+    <h1>아이디를 이용한 선택</h1>
+    <ul>
+        <li>First</li>
+        <li id="even">Second</li>
+        <li>Third</li>
+        <li id="even">Fourth</li>
+        <!-- id 선택은 해당 id를 가진 요소 중 첫번째 하나만 선택 -->
+        <li>Fifth</li>
+    </ul>
+
+    <script>
+        var selectitem = document.getElementById("even"); //아이디가 "even"인 요소 선택
+        selectitem.style.color = "red";
+    </script>
+
+    <h1>클래스를 이용한 선택</h1>
+    <ul>
+        <li class="odd">First</li>
+        <li>Second</li>
+        <li class="odd">Third</li>
+        <li>Fourth</li>
+        <li class="odd">Fifth</li>
+    </ul>
+
+    <script>
+        var selectitem = document.getElementsByClassName("odd"); //클래스가 odd인 요소 모두 선택
+        for (var i=0; i<selectitem.length; i++) {
+            selectitem.item(i).style.color = "red";
+        }
+    </script>
+
+    <h1>name 속성을 이용한 선택</h1>
+
+    <p name="first">첫 번째 단락</p>
+    <ul>
+        <li name="first">First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+
+    <script>
+        var selectitem = document.getElementsByName("first");//속성값이 first인 요소 모두 선택
+        for (var i=0; i<selectitem.length; i++) {
+            selectitem.item(i).style.color = "red"; // 선택된 모든 요소 텍스트 색상 변경
+        }
+    </script>
+
+    <h1>CSS 선택자를 이용한 선택</h1>
+    <p class="odd">첫 번째 단락</p>
+    <ul>
+        <li class="odd">First</li>
+        <li>Second</li>
+        <li class="odd">Third</li>
+        <li>Fourth</li>
+        <li class="odd">Fifth</li>
+    </ul>
+
+    <script>
+        var selectitem = document.querySelectorAll("li.odd"); //클래스가 odd인 요소 중에서 li 요소 선택
+        // querySelectorAll: 조건에 맞는 모든 요소를 노드리스트로 반환
+        for(var i=0; i<selectitem.length; i++) {
+            selectitem.item(i).style.color = "red";
+        }
+    </script>
+
+    <h1>HTML 객체 집합을 이용한 선택</h1>
+
+    <script>
+        var title = document.title; //title 요소를 선택
+        document.write(title);
+    </script>
+
+    <h1>innerHTML을 이용한 요소 내용 변경</h1>
+    <p id="text">바꿀 문장</p>
+
+    <script>
+        var str = document.getElementById("text");
+        str.innerHTML = "문장 바꿈";
+    </script>
+
+    <h1>속성 이름을 이용한 속성값 변경</h1>
+    <a id="link" href="http://tcpschool.com/html/intro">HTML 수업 바로가기</a>
+    <br></br> <!--줄바꿈-->
+    <button onclick="changeLink()">자바스크립트 수업으로 바꾸기!</button>
+
+    <script>
+        function changeLink() {
+            var link = document.getElementById("link"); //아이디가 link인 요소 선택
+            link.href = "http://tcpschool.com/javascript/intro"; //해당 요소 href 속성 변경
+            link.innerHTML = "자바스크립트 수업 바로 가기!"; //해당 요소 내용 변경
+        }
+    </script>
+
+    <h1>DOM 요소 스타일 변경</h1>
+    <p id="text">이 문자열의 기본색은 검정색입니다!</p>
+    <button onclick="changeRedColor()">Red</button>
+    <button onclick="changeBlackColor()">Black</button>
+
+    <script>
+        var str = document.getElementById("text");//아이디가 str인 요소 선택
+        function changeRedColor() {
+            str.style.color = "red"; // 해당 요소 글자색 빨강으로 변경
+            str.innerText = "이 문자열의 기본색을 빨간색입니다!"
+        //innerText: 보이는 텍스트만 가져오거나 변경하고, HTML 태그는 무시
+        }
+        function changeBlackColor() {
+            str.style.color = "black";
+            str.innerHTML = "이 문자열의 기본색은 검정색입니다!";
+            //innerHTML: HTML 구조(코드)까지 포함해서 가져오거나 변경
+        }
+
+    </script>
+</body>
+</html>
