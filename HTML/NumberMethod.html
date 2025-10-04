@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Number Method</title>
+</head>
+
+<body>
+    <h1>Number.parseFloat() 메소드</h1>
+    
+    <script>
+        document.write(Number.parseFloat("12")+"<br>");
+        document.write(Number.parseFloat("12.34")+"<br>");
+        document.write(Number.parseFloat("12문자열")+"<br>");
+        document.write(Number.parseFloat("12 34 56")+"<br>");
+        document.write(Number.parseFloat("문자열 12")+"<br>");
+    </script>
+
+    <h1>Number.parselnt() 메소드</h1>
+
+    <script>
+        document.write(Number.parseInt("12")+"<br>");
+        document.write(Number.parseInt("12.34")+"<br>");
+        document.write(Number.parseInt("12문자열")+"<br>");
+        document.write(Number.parseInt("12 34 56")+"<br>");
+        document.write(Number.parseInt("문자열12")+"<br>");
+    </script>
+
+    <h1>Number.isNaN() 메소드</h1>
+
+    <script>
+        document.write(Number.isNaN(NaN)+"<br>");
+        document.write(Number.isNaN(0/0)+"<br><br>");
+
+        //다음은 전역 함수인 isNaN()에서 잘못된 결과를 반환하는 예제
+        document.write(isNaN("NaN")+"<br>");
+        document.write(isNaN("undefined")+"<br>");
+        document.write(isNaN("문자열")+"<br><br>");
+
+        //Number.isNaN() 메소드에서는 맞는 결과를 반환하고 있음
+        document.write(Number.isNaN("NaN")+"<br>");
+        document.write(Number.isNaN("NaN")+"<br>");
+        document.write(Number.isNaN("문자열")); 
+    </script>
+
+    <h1>Number.isFinite() 메소드</h1>
+
+    <script>
+        document.write(Number.isFinite(0) + "<br>");
+        document.write(Number.isFinite(3e45) + "<br><br>");
+
+        document.write(Number.isFinite(Infinity)+"<br>");
+        document.write(Number.isFinite(NaN)+"<br><br>");
+
+        //전역함수인 inFinite()에서 잘못된 결과 반환
+        document.write(isFinite("0")+"<br>");
+        document.write(isFinite(null)+"<br><br>");
+
+        //Number.isFinite() 메소드에서 맞는 결과 반환
+        document.write(Number.isFinite("0")+"<br>");
+        document.write(Number.isFinite(null));
+    </script>
+
+    <h1>Number.isInteger() 메소드</h1>
+
+    <script>
+        document.write(Number.isInteger(0)+"<br>");
+        document.write(Number.isInteger(-100)+"<br><br>");
+
+        document.write(Number.isInteger(0.1)+"<br>");
+        document.write(Number.isInteger("문자열")+"<br>");
+        document.write(Number.isInteger(Infinity)+"<br>");
+        document.write(Number.isInteger(true));
+    </script>
+
+    
+	<h1>Number.isSafeInteger() 메소드</h1>
+
+	<script>
+		document.write(Number.isSafeInteger(10) + "<br>");						
+		document.write(Number.isSafeInteger(Math.pow(2, 53) - 1) + "<br><br>");	
+
+		document.write(Number.isSafeInteger(Math.pow(2, 53)) + "<br>");			
+		document.write(Number.isSafeInteger(Infinity) + "<br>");				
+		document.write(Number.isSafeInteger(NaN) + "<br>");						
+		document.write(Number.isSafeInteger(3.14));
+	</script>
+
+    <h1>toExponential() 메소드</h1>
+
+	<script>
+		var num = 12.3456; // Number 인스턴스를 생성
+
+		document.write(num.toExponential() + "<br>");		
+		document.write(num.toExponential(2) + "<br>");		
+		document.write(num.toExponential(4) + "<br>");		
+		document.write(12.3456.toExponential());			
+	</script>
+
+<h1>toPrecision() 메소드</h1>
+
+	<script>
+		var num = 3.14159265; // Number 인스턴스를 생성
+
+		document.write(num.toPrecision() + "<br>");			
+		document.write(num.toPrecision(2) + "<br>");		
+		document.write(num.toPrecision(4) + "<br>");		
+		document.write(3.14159265.toPrecision(6));			
+	</script>
+
+<h1>toString() 메소드</h1>
+
+	<script>
+		var num = 255; // Number 인스턴스를 생성
+
+		document.write(num.toString() + "<br>");		
+		document.write((255).toString() + "<br>");		
+		document.write((3.14).toString() + "<br>");		
+		document.write(num.toString(2) + "<br>");		
+		document.write((100).toString(16) + "<br>");	
+		document.write((-0xff).toString(2));			
+
+	</script>
+
+    <h1>valueOf() 메소드</h1>
+
+	<script>
+		var numObj = new Number(123); 	
+		document.write(typeof numObj + "<br>");	
+
+		var num = numObj.valueOf();
+		document.write(num + "<br>");	
+		document.write(typeof num);		
+	</script>
+
+</body>
+</html>

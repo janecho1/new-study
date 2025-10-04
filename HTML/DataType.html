@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript DataType</title>
+</head>
+
+<body>
+
+    <h1>숫자 타입</h1>
+    <p id="number"></p>
+
+    <script>
+        var firstNum = 10; //소수점 사용 X
+        var secondNum=10.00; //소수점 사용
+        var thirdNum=10e6; //10 000000
+        var fourthNum=10e-6;//0.00001 
+                            //0*5
+
+        document.getElementById("number").innerHTML = //id가 number인 요소 hmtl에 Num들 더하기
+            firstNum + "<br>" + secondNum + "<br>" + thirdNum + "<br>" + fourthNum + "<br>";        
+    </script>
+
+    <h1>문자열 타입</h1>
+    <p id="str"></p>
+
+    <script>
+        var firstStr = "문자열" //큰 따옴표 사용
+        var secondStr = '문1자1열' //작은 따옴표 사용
+        var thirdStr = "I'm 'JI EUN'." // 큰 따옴표 > 작은 따옴표
+        var fourthStr = 'I\'m "JI EUN".' //1, '\' 사용
+                                         //2, '`' 사용
+    
+        
+        document.getElementById("str").innerHTML=
+            firstStr + "<br>" + secondStr + "<br>" + thirdStr + "<br>" + fourthStr + "<br>";
+    </script>
+
+    <h1>숫자와 문자열의 덧셈</h1>
+    <p id="result"></p>
+
+    <script>
+        var num = 7;
+        var str = "JS";
+
+        document.getElementById("result").innerHTML = (num + str);
+    </script>
+
+    <h1>불리언 타입</h1>
+    <p id="result1"></p>
+
+    <script>
+        var firstNum=10;
+        var secondNum=11;
+
+        document.getElementById("result1").innerHTML=(firstNum==secondNum);
+    </script>
+
+    <h1>심볼 타입</h1>
+    <p id="result2"></p>
+
+    <script>
+        var sym = Symbol("javascript"); //심볼 타입
+        var symObj = Object(sym); //객체 타입
+
+        document.getElementById("result2").innerHTML=
+            (typeof sym) + "<br>" + (typeof symObj);
+    </script>
+
+    <h1>typeof 연산자</h1>
+    <p id="result3"></p>
+    <script>
+        document.getElementById("result3").innerHTML = (typeof 10) +"<br>";
+        document.getElementById("result3").innerHTML += (typeof "a") +"<br>";
+        document.getElementById("result3").innerHTML +=(typeof true) +"<br>";
+        document.getElementById("result3").innerHTML +=(typeof undefined) +"<br>";
+        document.getElementById("result3").innerHTML +=(typeof null) +"<br>";
+    </script>
+
+    <h1>null과 undefined</h1>
+    <p id="result4"></p>
+
+    <script>
+        var num1; //초기화 안함
+        var str = null; //object 타입의 null 값
+
+        //정의되지 않은 변수에 접근 시 undefined 반환
+        document.getElementById("result4").innerHTML =
+            (typeof num1) + "<br>" + (typeof str) + "<br>" + (typeof secondnum);
+    </script>
+
+    <h1>객체 타입</h1>
+    <p id="result5"></p>
+
+    <script>
+        var dog = {name: "해피", age: 3}; //객체의 생성 
+
+        //객체의 프로퍼티 참조
+        document.getElementById("result5").innerHTML = 
+            "강아지의 이름은 " + dog.name + "이고, 나이는 " + dog.age + "살 입니다.";
+    </script>
+    
+    <h1>객체의 개념</h1>
+
+    <script>
+        var cat = "나비"; //일반적인 변수의 선언
+        //객체도 많은 값을 가지는 변수
+        var kitty = {name: "나비", family: "코리안 숏 헤어", age: 1, weight: 0.1};
+
+        document.write(cat+"<br>");
+        document.write(kitty.name);
+    </script>
+
+    <h1>객체의 프로퍼티 참조</h1>
+
+    <script>
+        var person={
+            name: "홍길동", //이름 프로퍼티
+            birthday: "0907111", 
+            pid: "1222345",
+            fullld: function() {
+                return this.birthday+this.pid;
+            }
+        };
+
+        document.write(person.name+"<br>");
+        document.write(person["name"]);
+    </script>
+
+    <h1>객체의 메소드 참조</h1>
+
+    <script>
+        var person = {
+            name: "홍길동", 
+            birthday: "123456",
+            pid: "1234567",
+            fullld: function() {
+                return this.birthday + this.pid;
+            }
+        };
+
+        document.write(person.fullld()+"<br>");
+        document.write(person.fullld);
+    </script>
+
+
+
+</body>
+</html>

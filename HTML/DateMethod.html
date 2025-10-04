@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+   <title>JavaScript Date Method</title>
+</head>
+<body>
+    
+    <h1>날짜를 문자열이나 숫자로 변환</h1>
+	<p id="result"></p>
+
+	<script>
+		var result = String(Date());
+		document.getElementById("result").innerHTML = result + "<br>";
+		result = Date().toString();
+		document.getElementById("result").innerHTML += result + "<br>";
+		var date = new Date();
+		result = date.getFullYear();
+		document.getElementById("result").innerHTML += result + "<br>";
+		result = date.getTime();	
+		document.getElementById("result").innerHTML += result;
+	</script>
+
+    <h1>Date.now() 메소드</h1>
+
+	<script>
+		var nowMiliSec = Date.now();
+		document.write(nowMiliSec + "<br>");			
+		document.write(new Date(nowMiliSec) + "<br>");	
+	</script>
+
+    <h1>getFullYear() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		document.write("올해는 " + date.getFullYear() + "년입니다.");
+	</script>
+	
+    <h1>getDate() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		document.write("오늘은 " + date.getMonth() + "월 " + date.getDate() + "일입니다.");	
+	</script>
+
+    <h1>getDay() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		var day;
+		switch (date.getDay()) {
+			case 0:
+				day = "일";
+				break;
+			case 1:
+				day = "월";
+				break;
+			case 2:
+				day = "화";
+				break;
+			case 3:
+				day = "수";
+				break;
+			case 4:
+				day = "목";
+				break;
+			case 5:
+				day = "금";
+				break;
+			case 6:
+				day = "토";
+				break;
+		}
+		document.write("오늘은 " + day + "요일입니다.");
+	</script>
+
+    <h1>getDay() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		var days = ["일", "월", "화", "수", "목", "금", "토"];
+		document.write("오늘은 " + days[date.getDay()] + "요일입니다.");
+	</script>
+
+    	<h1>getTime() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		var period = date.getTime() / 86400000
+		document.write("1970년 1월 1일부터 오늘까지 " + period.toFixed() + "일이 지났습니다."); // 소수 부분은 생략
+	</script>
+
+    <h1>setFullYear() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		date.setFullYear(1982, 1, 19);	// 자바스크립트에서 2월은 1임
+		document.write(date.getFullYear() + "<br>");	
+		document.write(date.getMonth() + "<br>");		
+		document.write(date.getDate() + "<br>");		
+		document.write(date);
+	</script>
+
+    <h1>setDate() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		date.setDate(10);				// Date 객체의 일자 값을 10일로 설정
+		document.write(date + "<br>");
+		date.setDate(40);				// 40일을 설정시 초과되는 일수만큼 다음달로 넘어감
+		document.write(date);
+	</script>
+
+</body>
+</html>

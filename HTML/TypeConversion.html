@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Type Conversion</title>
+</head>
+
+<body>
+    <h1>같은 변수에 다른 타입의 값 대입</h1>
+    <p id="result"></p>
+
+    <script>
+        var num = 20; 
+        document.getElementById("result").innerHTML = num + "<br>";
+        num = "이십";
+        document.getElementById("result").innerHTML += num + "<br>";
+        var num;
+        document.getElementById("result").innerHTML += num;
+
+    </script>
+
+    <h1>묵시적 타입 변환</h1>
+    <p id="result1"></p>
+
+    <script>c
+        var result1 = 10 + "ㄱㄴㄷ";
+        document.getElementById("result1").innerHTML = result1 + "<br>";
+        result1 = "2" * "4";
+        document.getElementById("result1").innerHTML += result1 + "<br>";
+        result1 = 1-"ㄱㄴㄷ";
+        document.getElementById("result1").innerHTML += result1;
+    </script>
+
+    <h1>명시적 타입 변환 함수</h1>
+    <p id="result2"></p>
+
+    <script>
+        document.getElementById("result2").innerHTML = Number("10")+"<br>";
+        document.getElementById("result2").innerHTML += String(true) + "<br>";
+        document.getElementById("result2").innerHTML += Boolean(0)+"<br>";
+        document.getElementById("result2").innerHTML += Object(3);
+    </script>
+
+    <h1>숫자를 문자열로 변환</h1>
+    
+
+
+</body>
+
+</html>
